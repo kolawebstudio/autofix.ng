@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Service | AutoFix NG</title>
+    <link rel="stylesheet" href="Web.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index..html" class="logo">AutoFix <span>NG</span></a>
+
+        <div class="nav-links">
+          <a href="index..html">Home</a>
+          <a href="booking.html">Booking</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="booking-section">
+        <h1>Book a Service</h1>
+        <p>Fill in your details and tell us what your vehicle needs.</p>
+
+        <form class="booking-form">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+
+          <label for="vehicle">Vehicle Model</label>
+          <input
+            type="text"
+            id="vehicle"
+            placeholder="e.g. Toyota Camry"
+            required
+          />
+
+          <label for="service">Select Service</label>
+          <select id="service" required>
+            <option value="">Choose a service</option>
+            <option>Engine Diagnostics</option>
+            <option>Brake Service</option>
+            <option>Oil Change</option>
+            <option>A.C Service</option>
+            <option>Electrical & Battery</option>
+            <option>General Maintenance</option>
+          </select>
+
+          <label for="message">Additional Details</label>
+          <textarea
+            id="message"
+            placeholder="Describe the problem with your vehicle"
+          ></textarea>
+
+          <button type="submit" class="btn">Submit Booking</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
