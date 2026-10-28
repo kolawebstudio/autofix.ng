@@ -9,10 +9,10 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="index..html" class="logo">AutoFix <span>NG</span></a>
+        <a href="index.html" class="logo">AutoFix <span>NG</span></a>
 
         <div class="nav-links">
-          <a href="index..html">Home</a>
+          <a href="index.html">Home</a>
           <a href="booking.html">Booking</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
@@ -68,7 +68,7 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-      const SUPABASE_URL = "https://dlctsrzzrqcdipmzpqzz.supabase.co";
+      const SUPABASE_URL = "https://dlctsrzzrqcdipmzpqzz.supabase.co/rest/v1/";
       const SUPABASE_KEY = "sb_publishable_dRRo8MohkduP1Bda5wIvtA_57xoX1e5";
 
       const supabaseClient = window.supabase.createClient(
@@ -93,7 +93,7 @@
           .insert([booking]);
 
         if (error) {
-          alert("Booking failed: " + error.message);
+          alert("Booking failed. Please try again.");
           console.error(error);
           return;
         }
