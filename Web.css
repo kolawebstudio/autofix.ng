@@ -20,79 +20,27 @@ body {
 
 header {
     background: #101820;
-}
-
-/* NAVIGATION BAR */
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    padding: 12px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #111827;
 }
 
-/* WEBSITE LOGO */
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: #f97316;
-}
-
-/* NAVIGATION LINKS */
-.nav-links {
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 6%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
 }
 
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #f97316;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 600px) {
-    .navbar {
-        padding: 12px 4%;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-}
 .logo {
     color: white;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .logo span,
@@ -102,7 +50,8 @@ footer span {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 25px;
 }
 
 .nav-links a {
@@ -310,52 +259,6 @@ footer p {
     margin-top: 8px;
 }
 
-/* MOBILE RESPONSIVENESS */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .hero {
-        min-height: 480px;
-        padding: 60px 7%;
-    }
-
-    .service-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-us ul {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .service-list {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-    }
-
-    .section-heading h2,
-    .about h2,
-    .why-us h2,
-    .cta h2 {
-        font-size: 27px;
-    }
-}
 /* BOOKING PAGE */
 
 .booking-section {
@@ -420,12 +323,6 @@ footer p {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .booking-section {
-        margin: 30px 15px;
-        padding: 25px 18px;
-    }
-}
 /* CONTACT PAGE */
 
 .contact-section {
@@ -477,7 +374,48 @@ footer p {
     text-decoration: underline;
 }
 
+/* TABLET AND MOBILE */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 4%;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 60px 7%;
+    }
+
+    .service-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-us ul {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
+    .booking-section {
+        margin: 30px 15px;
+        padding: 25px 18px;
+    }
+
     .contact-section {
         margin: 30px 15px;
         padding: 20px 10px;
@@ -485,5 +423,39 @@ footer p {
 
     .contact-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 9px 3%;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .why-us h2,
+    .cta h2 {
+        font-size: 27px;
     }
 }
