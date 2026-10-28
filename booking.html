@@ -93,7 +93,7 @@
           .insert([booking]);
 
         if (error) {
-          alert("Booking failed. Please try again.");
+          alert("Booking failed: " + error.message);
           console.error(error);
           return;
         }
