@@ -9,10 +9,10 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="index.html" class="logo">AutoFix <span>NG</span></a>
+        <a href="index..html" class="logo">AutoFix <span>NG</span></a>
 
         <div class="nav-links">
-          <a href="index.html">Home</a>
+          <a href="index..html">Home</a>
           <a href="booking.html">Booking</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
@@ -25,7 +25,7 @@
         <h1>Book a Service</h1>
         <p>Fill in your details and tell us what your vehicle needs.</p>
 
-        <form class="booking-form">
+        <form class="booking-form" id="booking-form">
           <label for="name">Full Name</label>
           <input type="text" id="name" placeholder="Enter your name" required />
 
@@ -66,5 +66,41 @@
         </form>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const SUPABASE_URL = "https://dlctsrzzrqcdipmzpqzz.supabase.co/rest/v1/";
+      const SUPABASE_KEY = "sb_publishable_dRRo8MohkduP1Bda5wIvtA_57xoX1e5";
+
+      const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY,
+      );
+      const bookingForm = document.getElementById("booking-form");
+
+      bookingForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const booking = {
+          full_name: document.getElementById("name").value.trim(),
+          phone: document.getElementById("phone").value.trim(),
+          vehicle_model: document.getElementById("vehicle").value.trim(),
+          service: document.getElementById("service").value,
+          message: document.getElementById("message").value.trim(),
+        };
+
+        const { error } = await supabaseClient
+          .from("bookings")
+          .insert([booking]);
+
+        if (error) {
+          alert("Booking failed. Please try again.");
+          console.error(error);
+          return;
+        }
+
+        alert("Booking submitted successfully!");
+        bookingForm.reset();
+      });
+    </script>
   </body>
 </html>
